@@ -3,6 +3,25 @@ body {
         margin: 0;
         padding: 0;
     }
+    @media (max-width: 768px) {
+        .view-work {
+            display: block; /* Ensure the button is displayed on smaller screens */
+        }
+    
+        .expertise-hover {
+            display: block; /* Ensure expertise info is displayed on smaller screens */
+        }
+    
+        .responsive-content {
+            width: 90%; /* Keep it responsive */
+            margin: 0 auto; /* Center the content */
+        }
+    
+        /* Remove any display: none; properties to show all content */
+    }
+    
+    /* Ensure all other styles remain intact */
+    
     
     header {
         position: relative;

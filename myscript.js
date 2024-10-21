@@ -37,3 +37,24 @@
         // Uncomment below to actually submit the form
         // contactForm.submit();
     });
+    (function(){
+        emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS User ID
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const templateParams = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+        };
+
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams) // Replace with your service and template IDs
+            .then(function(response) {
+                alert('Message sent successfully!', response.status, response.text);
+                document.getElementById('contact-form').reset(); // Reset the form after successful submission
+            }, function(error) {
+                alert('Failed to send message. Please try again.', error);
+            });
+    });
